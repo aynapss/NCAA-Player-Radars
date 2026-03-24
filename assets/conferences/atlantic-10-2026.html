@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta property="og:title" content="Atlantic 10 OVR Dashboard 2026" />
+  <meta property="og:description" content="Top 30 players by OVR — Atlantic 10 2026 · NapsBets" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Atlantic 10 OVR Dashboard 2026" />
+  <meta name="twitter:description" content="Hover to explore top 30 players by OVR rating" />
+  <title>Atlantic 10 OVR — 2026 · NapsBets</title>
+  <style>
+    body { margin:0; padding:20px; background:#090b0f; }
+    tr { cursor:default; transition:background 0.12s; }
+    td span { transition:transform 0.1s; display:inline-block; }
+    td span:hover { transform:scale(1.1); }
+  </style>
+</head>
+<body><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <div style="
+      font-family:'Barlow',sans-serif;
+      background:#090b0f;
+      color:#c9d0dc;
+      border-radius:8px;
+      border:1px solid #1c2030;
+      padding:18px 18px 16px;
+      max-width:700px;
+      margin:16px auto;
+      position:relative;
+    ">
+      <div style="display:flex;align-items:stretch;
+                  background:#0a0c10;border-bottom:1px solid #1c2030;
+                  margin:-18px -18px 16px;overflow:hidden;">
+
+        <div style="width:4px;background:#f0b429;flex-shrink:0;"></div>
+
+        <div style="flex:1;padding:12px 16px;display:flex;
+                    flex-direction:column;justify-content:center;gap:6px;">
+
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;
+                         letter-spacing:.15em;color:#f0b429;">NAPSBETS</span>
+            <span style="font-family:'DM Mono',monospace;font-size:8px;
+                         letter-spacing:.16em;text-transform:uppercase;
+                         color:#252c3d;padding-left:6px;
+                         border-left:1px solid #1c2030;">Top Player Rankings</span>
+          </div>
+
+          <div style="display:flex;align-items:baseline;gap:10px;">
+            <span style="font-family:'Barlow',sans-serif;font-weight:700;
+                         font-size:20px;color:#e5e7eb;letter-spacing:.04em;
+                         text-transform:uppercase;line-height:1;">Atlantic 10</span>
+            <span style="font-family:'DM Mono',monospace;font-size:8px;
+                         color:#2d3547;letter-spacing:.06em;">
+              Season 2026 &nbsp;·&nbsp;
+              225 players &nbsp;·&nbsp; 14 teams
+            </span>
+          </div>
+
+        </div>
+
+        <div style="width:88px;background:#0d0f16;border-left:1px solid #1c2030;
+                    display:flex;align-items:center;justify-content:center;
+                    padding:10px;flex-shrink:0;">
+          <img src="data:image/png;base64,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" style="width:64px;height:64px;object-fit:contain;opacity:0.8;display:block;" />
+        </div>
+
+      </div>
+
+      <table style="width:100%;border-collapse:collapse;">
+        <thead>
+          <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="border-bottom:1px solid #1c2030;">
+            <th style="padding:4px 10px;text-align:center;font-family:'DM Mono',monospace;font-size:7px;letter-spacing:.15em;text-transform:uppercase;color:#1c2030;font-weight:500;width:40px;">#</th>
+            <th style="padding:4px 12px;text-align:center;font-family:'DM Mono',monospace;font-size:7px;letter-spacing:.15em;text-transform:uppercase;color:#1c2030;font-weight:500;">Team</th>
+            <th style="padding:4px 12px;text-align:center;font-family:'DM Mono',monospace;font-size:7px;letter-spacing:.15em;text-transform:uppercase;color:#1c2030;font-weight:500;">Player</th>
+            <th style="padding:4px 8px;text-align:center;font-family:'DM Mono',monospace;font-size:7px;letter-spacing:.15em;text-transform:uppercase;color:#1c2030;font-weight:500;width:60px;">Pos / Yr</th>
+            <th style="padding:4px 10px;text-align:center;font-family:'DM Mono',monospace;font-size:7px;letter-spacing:.15em;text-transform:uppercase;color:#1c2030;font-weight:500;width:64px;">OVR</th>
+            <th style="padding:4px 10px;text-align:center;font-family:'DM Mono',monospace;font-size:7px;letter-spacing:.15em;text-transform:uppercase;color:#1c2030;font-weight:500;width:80px;">Tier</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:linear-gradient(90deg,rgba(240,180,41,.07),rgba(240,180,41,.03),transparent);border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#f0b429;width:40px;font-weight:600;
+                     vertical-align:middle;">1<span style="font-family:'DM Mono',monospace;font-size:8px;color:#f0b429;margin-left:2px;">★</span></td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">George Washington</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#e5c46b;text-align:center;
+                     vertical-align:middle;">Rafael Castro</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">90.9</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:linear-gradient(90deg,rgba(240,180,41,.07),rgba(240,180,41,.03),transparent);border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#f0b429;width:40px;font-weight:600;
+                     vertical-align:middle;">2<span style="font-family:'DM Mono',monospace;font-size:8px;color:#9ca3af;margin-left:2px;">★</span></td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Virginia Commonwealth</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#e5c46b;text-align:center;
+                     vertical-align:middle;">Terrence Hill</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">90.7</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:linear-gradient(90deg,rgba(240,180,41,.07),rgba(240,180,41,.03),transparent);border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#f0b429;width:40px;font-weight:600;
+                     vertical-align:middle;">3<span style="font-family:'DM Mono',monospace;font-size:8px;color:#b45309;margin-left:2px;">★</span></td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Saint Louis</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#e5c46b;text-align:center;
+                     vertical-align:middle;">Robbie Avila</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">90.2</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:linear-gradient(90deg,rgba(167,139,250,.05),transparent);border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#a78bfa;width:40px;font-weight:600;
+                     vertical-align:middle;">4</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Duquesne</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c4b5fd;text-align:center;
+                     vertical-align:middle;">Tarence Guinyard</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">88.5</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:linear-gradient(90deg,rgba(167,139,250,.05),transparent);border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#a78bfa;width:40px;font-weight:600;
+                     vertical-align:middle;">5</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Loyola Chicago</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c4b5fd;text-align:center;
+                     vertical-align:middle;">Miles Rubin</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">86.2</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:linear-gradient(90deg,rgba(167,139,250,.05),transparent);border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#a78bfa;width:40px;font-weight:600;
+                     vertical-align:middle;">6</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Duquesne</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c4b5fd;text-align:center;
+                     vertical-align:middle;">Jimmie Williams</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">85.8</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:linear-gradient(90deg,rgba(167,139,250,.05),transparent);border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#a78bfa;width:40px;font-weight:600;
+                     vertical-align:middle;">7</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Virginia Commonwealth</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c4b5fd;text-align:center;
+                     vertical-align:middle;">Lazar Djokovic</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">85.3</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:linear-gradient(90deg,rgba(167,139,250,.05),transparent);border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#a78bfa;width:40px;font-weight:600;
+                     vertical-align:middle;">8</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Fordham</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c4b5fd;text-align:center;
+                     vertical-align:middle;">Dejour Reaves</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">85.1</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:linear-gradient(90deg,rgba(167,139,250,.05),transparent);border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#a78bfa;width:40px;font-weight:600;
+                     vertical-align:middle;">9</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">St. Bonaventure</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c4b5fd;text-align:center;
+                     vertical-align:middle;">Frank Mitchell</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">85.0</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:linear-gradient(90deg,rgba(167,139,250,.05),transparent);border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#a78bfa;width:40px;font-weight:600;
+                     vertical-align:middle;">10</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Richmond</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c4b5fd;text-align:center;
+                     vertical-align:middle;">A.J. Lopez</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">84.4</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#090b0f;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">11</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">George Mason</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Riley Allenspach</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">83.1</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#0c0e14;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">12</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Dayton</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">De'Shayne Montgomery</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">82.8</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#090b0f;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">13</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Saint Louis</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Kellen Thames</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">82.8</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#0c0e14;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">14</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Saint Louis</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Trey Green</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">82.6</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#090b0f;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">15</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Dayton</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Amael L'Etang</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(167,139,250,.15);color:#a78bfa;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #a78bfa30;">81.9</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#a78bfa;display:block;
+                         line-height:1;padding:2px 0;">SUPERSTAR</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#0c0e14;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">16</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Richmond</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Aiden Argabright</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">79.3</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#090b0f;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">17</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">St. Bonaventure</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Daryl Simmons II</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">79.0</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#0c0e14;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">18</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Richmond</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Michael Walz</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">78.3</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#090b0f;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">19</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Dayton</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Javon Bennett</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">78.1</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#0c0e14;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">20</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Rhode Island</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Tyler Cochran</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">76.9</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#090b0f;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">21</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Rhode Island</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Jahmere Tripp</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">76.1</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#0c0e14;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">22</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Davidson</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Roberts Blums</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">75.3</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#090b0f;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">23</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Davidson</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Josh Scovens</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">74.5</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#0c0e14;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">24</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Davidson</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Parker Friedrichsen</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">74.5</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#090b0f;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">25</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Saint Joseph's</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Derek Simpson</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">74.3</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#0c0e14;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">26</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Saint Louis</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Amari McCottry</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">74.0</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#090b0f;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">27</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">St. Bonaventure</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Cayden Charles</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">73.9</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#0c0e14;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">28</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">George Washington</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Tyrone Marshall</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">73.6</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#090b0f;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">29</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Saint Louis</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">Dion Brown</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">73.6</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr>
+        <tr onmouseenter="this.style.background='#1c1f2e'" onmouseleave="this.style.background=''" style="background:#0c0e14;border-bottom:1px solid #131720;">
+          <td style="text-align:center;padding:6px 10px;font-family:'DM Mono',monospace;
+                     font-size:9px;color:#252c3d;width:40px;font-weight:600;
+                     vertical-align:middle;">30</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:10px;
+                     font-weight:600;color:#9ca3af;white-space:nowrap;
+                     letter-spacing:.02em;text-align:center;
+                     vertical-align:middle;">Duquesne</td>
+          <td style="padding:6px 12px;font-family:'Barlow',sans-serif;font-size:11px;
+                     font-weight:600;color:#c9d0dc;text-align:center;
+                     vertical-align:middle;">David Dixon</td>
+          <td style="padding:6px 8px;text-align:center;vertical-align:middle;
+                     width:60px;"></td>
+          <td style="text-align:center;padding:6px 10px;width:64px;
+                     vertical-align:middle;">
+            <span style="background:rgba(34,197,94,.12);color:#22c55e;padding:2px 8px;
+                         border-radius:3px;font-family:'Bebas Neue',sans-serif;
+                         font-size:14px;letter-spacing:.04em;
+                         border:1px solid #22c55e30;">73.6</span>
+          </td>
+          <td style="padding:0 10px;width:80px;text-align:center;
+                     vertical-align:middle;">
+            <span style="font-family:'DM Mono',monospace;font-size:7px;
+                         letter-spacing:.1em;color:#22c55e;display:block;
+                         line-height:1;padding:2px 0;">STARTER</span>
+          </td>
+        </tr></tbody>
+      </table>
+
+      
+    <div style="margin-top:14px;border-top:1px solid #131720;padding-top:10px;">
+      <div style="display:flex;align-items:center;justify-content:center;
+                  gap:8px;flex-wrap:wrap;font-family:'DM Mono',monospace;
+                  font-size:8px;letter-spacing:.08em;">
+        <span style="color:#f0b429;font-weight:600;letter-spacing:.2em;
+                     font-family:'Bebas Neue',sans-serif;font-size:11px;">OVR SCALE</span>
+        <span style="color:#1c2030;">|</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;">
+          <span style="width:6px;height:6px;border-radius:50%;
+                       background:#4b5563;display:inline-block;flex-shrink:0;"></span>
+          <span style="color:#4b5563;">Bench &lt;60</span>
+        </span>
+        <span style="color:#1c2030;">·</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;">
+          <span style="width:6px;height:6px;border-radius:50%;
+                       background:#3b82f6;display:inline-block;flex-shrink:0;"></span>
+          <span style="color:#3b82f6;">Rotation 60–69</span>
+        </span>
+        <span style="color:#1c2030;">·</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;">
+          <span style="width:6px;height:6px;border-radius:50%;
+                       background:#22c55e;display:inline-block;flex-shrink:0;"></span>
+          <span style="color:#22c55e;">Starter 70–79</span>
+        </span>
+        <span style="color:#1c2030;">·</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;">
+          <span style="width:6px;height:6px;border-radius:50%;
+                       background:#a78bfa;display:inline-block;flex-shrink:0;"></span>
+          <span style="color:#a78bfa;">Superstar 80–95</span>
+        </span>
+        <span style="color:#1c2030;">·</span>
+        <span style="display:inline-flex;align-items:center;gap:4px;">
+          <span style="width:6px;height:6px;border-radius:50%;
+                       background:#f0b429;display:inline-block;flex-shrink:0;"></span>
+          <span style="color:#f0b429;">Legendary &gt;96</span>
+        </span>
+      </div>
+      <div style="margin-top:5px;text-align:center;font-family:'DM Mono',monospace;
+                  font-size:7px;color:#1c2030;letter-spacing:.06em;">
+        NCAA D1 Average = 75 OVR &nbsp;·&nbsp; Score benchmarks all Division I players
+        &nbsp;·&nbsp; Scale: 50 (avg) → 100 (elite)
+      </div>
+    </div>
+      
+    </div></body>
+</html>
