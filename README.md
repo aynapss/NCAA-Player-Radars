@@ -45,13 +45,8 @@ Each radar represents a consistent analytical framework applied across players t
 
 ## Viewing the Interactive Cards
 
-The live site is available here:
+The live site is available here (UNDER CONSTRUCTION):
 https://github.com/aynapss/NCAA-Player-Radars/
-
-
-Each player card has a direct shareable link:
-https://github.com/aynapss/NCAA-Player-Radars/players/player_name.html
-
 
 All content is served from the `/docs` directory via GitHub Pages.
 
